@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -25,6 +25,7 @@
       --dark-text: #333;
       --light-text: #fff;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --ocean-gradient: linear-gradient(135deg, #1e90ff, #00bfff);
     }
 
     * {
@@ -114,7 +115,7 @@
       bottom: 0;
       left: 0;
       background-color: var(--primary-color);
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .nav-link:hover::after,
@@ -181,12 +182,13 @@
     }
 
     .hero-section {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/zanzibar-hero.jpg');
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
       background-size: cover;
       background-position: center;
       color: var(--light-text);
       padding: 180px 0 100px;
       text-align: center;
+      position: relative;
       margin-top: 70px;
     }
 
@@ -201,6 +203,35 @@
       font-size: 1.5rem;
       max-width: 800px;
       margin: 0 auto 30px;
+    }
+
+    .island-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 150px;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .tm-btn {
@@ -280,6 +311,74 @@
       color: var(--primary-color);
     }
 
+    .experiences-section {
+      padding: 80px 0;
+      background: var(--ocean-gradient);
+      color: var(--light-text);
+    }
+
+    .experience-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .experience-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .experience-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .experience-card:hover .experience-image img {
+      transform: scale(1.1);
+    }
+
+    .experience-content {
+      padding: 25px;
+    }
+
+    .experience-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .experience-details {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .experience-details li {
+      padding: 5px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .experience-details li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+
     .package-card {
       background: var(--light-text);
       border-radius: 10px;
@@ -349,9 +448,34 @@
       font-weight: bold;
     }
 
+    .beaches-section {
+      padding: 80px 0;
+      background: var(--light-bg);
+    }
+
+    .beach-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .beach-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-right: 20px;
+      min-width: 60px;
+    }
+
+    .beach-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
     .testimonial-section {
       padding: 80px 0;
-      background: linear-gradient(rgba(60, 141, 13, 0.9), rgba(60, 141, 13, 0.9)), url('img/testimonial-bg.jpg');
+      background: linear-gradient(rgba(60, 141, 13, 0.9), rgba(60, 141, 13, 0.9)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
       background-size: cover;
       background-position: center;
       color: var(--light-text);
@@ -538,9 +662,34 @@
       }
 
       .about-section,
+      .experiences-section,
+      .beaches-section,
       .testimonial-section,
       .cta-section {
         padding: 60px 0;
+      }
+
+      .island-stats {
+        gap: 15px;
+      }
+
+      .stat-item {
+        min-width: 120px;
+        padding: 15px;
+      }
+
+      .stat-value {
+        font-size: 2rem;
+      }
+
+      .beach-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .beach-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
       }
 
       .testimonial-author {
@@ -584,7 +733,17 @@
         font-size: 1.8rem;
       }
 
+      .stat-item {
+        min-width: 100px;
+        padding: 10px;
+      }
+
+      .stat-value {
+        font-size: 1.8rem;
+      }
+
       .feature-card,
+      .experience-content,
       .package-content,
       .testimonial-card {
         padding: 20px;
@@ -613,9 +772,21 @@
         margin-right: 5px;
       }
 
-      .tm-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+      .island-stats {
+        gap: 10px;
+      }
+
+      .stat-item {
+        min-width: 80px;
+        padding: 8px;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -657,10 +828,29 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-      <h1>Discover Zanzibar's Paradise</h1>
-      <p>Experience the perfect blend of pristine beaches, rich culture, and exotic spice tours in Tanzania's tropical
-        archipelago</p>
-      <a href="#packages" class="tm-btn tm-btn-secondary">Explore Our Packages</a>
+      <h1>Discover Paradise in Zanzibar</h1>
+      <p>Experience the perfect blend of pristine beaches, rich history, and vibrant culture on Tanzania's spice island
+      </p>
+      <a href="#packages" class="tm-btn tm-btn-secondary">View Island Packages</a>
+
+      <div class="island-stats">
+        <div class="stat-item">
+          <div class="stat-value">25+</div>
+          <div class="stat-label">Beaches</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100+</div>
+          <div class="stat-label">Islands</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">5*</div>
+          <div class="stat-label">Resorts</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">365</div>
+          <div class="stat-label">Sunny Days</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -669,58 +859,142 @@
     <div class="container">
       <div class="row align-items-center mb-5">
         <div class="col-lg-6 mb-4 mb-lg-0">
-          <img src="img/zanzibar-about.jpg" alt="Zanzibar Beach" class="img-fluid rounded shadow" />
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Zanzibar Beach" class="img-fluid rounded shadow" />
         </div>
         <div class="col-lg-6">
-          <h2 class="section-title">Welcome to Zanzibar</h2>
+          <h2 class="section-title">About Zanzibar</h2>
           <p>
-            <strong>African Royalty Safaris</strong> invites you to explore the enchanting island of Zanzibar, a
-            tropical paradise in the Indian Ocean. Known as the "Spice Island," Zanzibar offers a unique blend of
-            stunning white-sand beaches, crystal-clear turquoise waters, and a rich cultural heritage.
+            Zanzibar is an archipelago off the coast of Tanzania, famous for its beautiful white-sand beaches, turquoise
+            waters, and rich cultural heritage. Often called the "Spice Islands," Zanzibar has a fascinating history
+            shaped by Arab, Persian, Indian, and European influences.
           </p>
           <p>
-            Our expertly crafted Zanzibar experiences take you beyond the ordinary, immersing you in the island's
-            vibrant history, diverse marine life, and warm Swahili hospitality. From exploring the UNESCO World Heritage
-            Site of Stone Town to relaxing on pristine beaches and snorkeling in vibrant coral reefs, we create
-            unforgettable memories tailored to your preferences.
+            With African Royalty Safaris, you'll discover the best of Zanzibar - from the historic Stone Town with its
+            labyrinthine alleys to the idyllic beaches of Nungwi and Kendwa. Our carefully curated experiences blend
+            relaxation, adventure, and cultural immersion for an unforgettable island getaway.
           </p>
-          <a href="contact.html" class="tm-btn">Plan Your Zanzibar Adventure</a>
+          <a href="contact.html" class="tm-btn">Plan Your Escape</a>
         </div>
       </div>
 
       <!-- Features Section -->
       <div class="row mt-5">
         <div class="col-12 text-center mb-5">
-          <h2 class="section-title">Why Choose Zanzibar?</h2>
+          <h2 class="section-title">Why Choose Our Zanzibar Tours?</h2>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3>Local Expertise</h3>
+            <p>Our guides are Zanzibar natives with deep knowledge of the island's hidden gems and authentic
+              experiences.</p>
+          </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="feature-card fade-in">
             <div class="feature-icon">
               <i class="fas fa-umbrella-beach"></i>
             </div>
-            <h3>Pristine Beaches</h3>
-            <p>Relax on world-famous beaches with powdery white sand and crystal-clear turquoise waters perfect for
-              swimming and water sports.</p>
+            <h3>Beach Paradise</h3>
+            <p>We have access to the most beautiful and secluded beaches, away from the crowded tourist spots.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="feature-card fade-in">
             <div class="feature-icon">
-              <i class="fas fa-history"></i>
+              <i class="fas fa-concierge-bell"></i>
             </div>
-            <h3>Rich History</h3>
-            <p>Explore Stone Town's labyrinthine alleys, ancient buildings, and learn about Zanzibar's fascinating
-              history as a trading hub.</p>
+            <h3>Tailored Experiences</h3>
+            <p>From romantic getaways to family adventures, we customize every aspect of your Zanzibar holiday.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="feature-card fade-in">
-            <div class="feature-icon">
-              <i class="fas fa-fish"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences Section -->
+  <section class="experiences-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="text-white">Island Experiences</h2>
+          <p class="lead">Discover the diverse attractions of Zanzibar</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="experience-card fade-in">
+            <div class="experience-image">
+              <img src="https://images.unsplash.com/photo-1598522325072-4fdabf119e97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Stone Town" />
             </div>
-            <h3>Marine Wonders</h3>
-            <p>Discover vibrant coral reefs teeming with marine life through snorkeling, diving, or a traditional dhow
-              cruise.</p>
+            <div class="experience-content">
+              <h3 class="experience-title">Stone Town Exploration</h3>
+              <p>Wander through the UNESCO World Heritage site with its narrow streets, bustling markets, and historic
+                buildings.</p>
+              <ul class="experience-details">
+                <li>Visit the House of Wonders</li>
+                <li>Explore the Old Fort</li>
+                <li>Shop at Darajani Market</li>
+                <li>See Freddie Mercury's House</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="experience-card fade-in">
+            <div class="experience-image">
+              <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Spice Tour" />
+            </div>
+            <div class="experience-content">
+              <h3 class="experience-title">Spice Plantation Tour</h3>
+              <p>Discover why Zanzibar is called the Spice Island with a guided tour of fragrant plantations.</p>
+              <ul class="experience-details">
+                <li>See vanilla, cloves & cinnamon</li>
+                <li>Taste tropical fruits</li>
+                <li>Learn about traditional uses</li>
+                <li>Purchase authentic spices</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="experience-card fade-in">
+            <div class="experience-image">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Prison Island" />
+            </div>
+            <div class="experience-content">
+              <h3 class="experience-title">Prison Island Excursion</h3>
+              <p>Visit this historic island with its giant tortoises and excellent snorkeling opportunities.</p>
+              <ul class="experience-details">
+                <li>See Aldabra giant tortoises</li>
+                <li>Snorkel in crystal clear waters</li>
+                <li>Learn about island history</li>
+                <li>Relax on pristine beaches</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="experience-card fade-in">
+            <div class="experience-image">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Jozani Forest" />
+            </div>
+            <div class="experience-content">
+              <h3 class="experience-title">Jozani Forest & Red Colobus Monkeys</h3>
+              <p>Explore Zanzibar's only national park, home to the rare red colobus monkeys and diverse flora.</p>
+              <ul class="experience-details">
+                <li>See endemic red colobus monkeys</li>
+                <li>Walk through mangrove boardwalks</li>
+                <li>Learn about conservation efforts</li>
+                <li>Photograph unique wildlife</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
           </div>
         </div>
       </div>
@@ -732,26 +1006,26 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center mb-5">
-          <h2 class="section-title">Zanzibar Packages</h2>
-          <p class="lead">Choose from our carefully curated Zanzibar experiences</p>
+          <h2 class="section-title">Island Packages</h2>
+          <p class="lead">Tailored Zanzibar experiences for every traveler</p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="package-card fade-in">
             <div class="package-image">
-              <img src="img/beach-retreat.jpg" alt="Beach Retreat" />
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Beach Escape" />
             </div>
             <div class="package-content">
-              <h3 class="package-title">Beach Paradise Retreat</h3>
-              <div class="package-price">From $1,200 / person</div>
-              <p>5 days of pure relaxation on Zanzibar's most beautiful beaches</p>
+              <h3 class="package-title">Beach Escape (5 Days)</h3>
+              <div class="package-price">From $850 / person</div>
+              <p>Perfect relaxation on Zanzibar's finest beaches</p>
               <ul class="package-features">
-                <li>4 nights luxury beach resort</li>
-                <li>Daily breakfast & dinner</li>
-                <li>Spice farm tour</li>
-                <li>Stone Town walking tour</li>
-                <li>Snorkeling trip</li>
+                <li>4 nights beachfront accommodation</li>
+                <li>Daily breakfast included</li>
+                <li>Stone Town half-day tour</li>
+                <li>Spice plantation visit</li>
+                <li>Airport transfers</li>
               </ul>
               <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
             </div>
@@ -760,40 +1034,118 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="package-card fade-in">
             <div class="package-image">
-              <img src="img/cultural-experience.jpg" alt="Cultural Experience" />
+              <img src="https://images.unsplash.com/photo-1598522325072-4fdabf119e97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cultural Explorer" />
             </div>
             <div class="package-content">
-              <h3 class="package-title">Cultural & Spice Experience</h3>
-              <div class="package-price">From $950 / person</div>
-              <p>Immerse yourself in Zanzibar's rich heritage and flavors</p>
-              <ul class="package-features">
-                <li>3 nights accommodation</li>
-                <li>Spice plantation tour</li>
-                <li>Stone Town historical tour</li>
-                <li>Traditional Swahili cooking class</li>
-                <li>Local market visit</li>
-              </ul>
-              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="package-card fade-in">
-            <div class="package-image">
-              <img src="img/adventure-package.jpg" alt="Adventure Package" />
-            </div>
-            <div class="package-content">
-              <h3 class="package-title">Island Adventure</h3>
-              <div class="package-price">From $1,500 / person</div>
-              <p>For the active traveler seeking Zanzibar's best experiences</p>
+              <h3 class="package-title">Cultural Explorer (7 Days)</h3>
+              <div class="package-price">From $1,250 / person</div>
+              <p>Immerse yourself in Zanzibar's rich heritage</p>
               <ul class="package-features">
                 <li>6 nights accommodation</li>
-                <li>Scuba diving or snorkeling</li>
-                <li>Jozani Forest tour</li>
-                <li>Dolphin watching</li>
+                <li>Comprehensive Stone Town tour</li>
+                <li>Spice plantation experience</li>
+                <li>Prison Island excursion</li>
+                <li>Traditional Swahili dinner</li>
+              </ul>
+              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="package-card fade-in">
+            <div class="package-image">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Luxury Retreat" />
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Luxury Retreat (8 Days)</h3>
+              <div class="package-price">From $2,100 / person</div>
+              <p>Premium Zanzibar experience with 5-star amenities</p>
+              <ul class="package-features">
+                <li>7 nights luxury resort</li>
+                <li>All meals included</li>
+                <li>Private guided tours</li>
+                <li>Spa treatments</li>
                 <li>Sunset dhow cruise</li>
               </ul>
               <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beaches Section -->
+  <section class="beaches-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">Zanzibar's Best Beaches</h2>
+          <p class="lead">Discover paradise on these stunning shores</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="beach-item fade-in">
+            <div class="beach-icon">
+              <i class="fas fa-umbrella-beach"></i>
+            </div>
+            <div class="beach-content">
+              <h3>Nungwi & Kendwa</h3>
+              <p>Located at the northern tip of Zanzibar, these beaches feature powdery white sand and turquoise waters.
+                Ideal for swimming at any tide and famous for spectacular sunsets.</p>
+            </div>
+          </div>
+          <div class="beach-item fade-in">
+            <div class="beach-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <div class="beach-content">
+              <h3>Paje & Jambiani</h3>
+              <p>On the southeast coast, these long stretches of beach are known for their turquoise waters and
+                traditional fishing villages. Perfect for kite surfing and cultural experiences.</p>
+            </div>
+          </div>
+          <div class="beach-item fade-in">
+            <div class="beach-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <div class="beach-content">
+              <h3>Matemwe</h3>
+              <p>A peaceful fishing village with a beautiful beach overlooking Mnemba Atoll. Excellent for snorkeling,
+                diving, and experiencing authentic village life.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="beach-item fade-in">
+            <div class="beach-icon">
+              <i class="fas fa-ship"></i>
+            </div>
+            <div class="beach-content">
+              <h3>Michamvi & Bwejuu</h3>
+              <p>These secluded beaches on the east coast offer privacy and tranquility. Known for their stunning
+                sunrise views and excellent swimming conditions.</p>
+            </div>
+          </div>
+          <div class="beach-item fade-in">
+            <div class="beach-icon">
+              <i class="fas fa-anchor"></i>
+            </div>
+            <div class="beach-content">
+              <h3>Kiwengwa & Uroa</h3>
+              <p>Mid-east coast beaches with calm waters and a range of accommodation options. Great for families and
+                water sports enthusiasts.</p>
+            </div>
+          </div>
+          <div class="beach-item fade-in">
+            <div class="beach-icon">
+              <i class="fas fa-snorkel"></i>
+            </div>
+            <div class="beach-content">
+              <h3>Mnemba Island</h3>
+              <p>An exclusive private island surrounded by a marine conservation area. Offers some of Zanzibar's best
+                snorkeling and diving with abundant marine life.</p>
             </div>
           </div>
         </div>
@@ -806,51 +1158,52 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center mb-5">
-          <h2 class="text-white">What Our Travelers Say</h2>
+          <h2>Visitor Experiences</h2>
+          <p class="lead">What our guests say about Zanzibar</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 mb-4">
+        <div class="col-lg-4 mb-4">
           <div class="testimonial-card fade-in">
             <div class="testimonial-text">
-              "Our Zanzibar experience with African Royalty Safaris was absolutely magical. The attention to detail and
-              personalized service made our honeymoon unforgettable."
+              "Our Zanzibar honeymoon was absolutely magical. African Royalty Safaris arranged the perfect blend of
+              beach relaxation and cultural experiences. The spice tour and Stone Town exploration were highlights!"
             </div>
             <div class="testimonial-author">
-              <img src="img/client1.jpg" alt="Sarah Johnson" />
+              <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Jessica & Mark" />
               <div class="author-info">
-                <h4>Sarah & Mark Johnson</h4>
-                <p>Honeymoon Travelers</p>
+                <h4>Jessica & Mark</h4>
+                <p>Honeymoon, 2023</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-lg-4 mb-4">
           <div class="testimonial-card fade-in">
             <div class="testimonial-text">
-              "The spice tour and Stone Town exploration were highlights of our trip. Our guide was incredibly
-              knowledgeable and made history come alive for us."
+              "The beaches in Zanzibar are even more beautiful than in the photos. We especially loved Nungwi Beach with
+              its amazing sunsets. The seafood is incredible and the people are so warm and welcoming."
             </div>
             <div class="testimonial-author">
-              <img src="img/client2.jpg" alt="Robert Chen" />
+              <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Robert Kim" />
               <div class="author-info">
-                <h4>Robert Chen</h4>
-                <p>Cultural Enthusiast</p>
+                <h4>Robert Kim</h4>
+                <p>Family Vacation, 2023</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-lg-4 mb-4">
           <div class="testimonial-card fade-in">
             <div class="testimonial-text">
-              "The beaches were even more beautiful than in the pictures! African Royalty Safaris arranged everything
-              perfectly - from airport transfers to our amazing beach resort."
+              "As a solo traveler, I felt completely safe and well taken care of. The guides were knowledgeable and the
+              itinerary perfectly balanced activities with free time. The Prison Island tortoises were unforgettable!"
             </div>
             <div class="testimonial-author">
-              <img src="img/client3.jpg" alt="Emma Wilson" />
+              <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Sophie Williams" />
               <div class="author-info">
-                <h4>Emma Wilson</h4>
-                <p>Beach Lover</p>
+                <h4>Sophie Williams</h4>
+                <p>Solo Travel, 2023</p>
               </div>
             </div>
           </div>
@@ -859,13 +1212,14 @@
     </div>
   </section>
 
-  <!-- Call to Action Section -->
+  <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
-      <h2>Ready for Your Zanzibar Adventure?</h2>
-      <p>Contact us today to start planning your personalized Zanzibar experience. Our travel experts will create the
-        perfect itinerary tailored to your interests and preferences.</p>
-      <a href="contact.html" class="tm-btn tm-btn-secondary">Get in Touch</a>
+      <h2>Ready for Your Island Paradise?</h2>
+      <p>Contact us today to start planning your Zanzibar escape. Our team will create the perfect itinerary combining
+        beach relaxation, cultural experiences, and island adventures.</p>
+      <a href="contact.html" class="tm-btn tm-btn-secondary mr-3">Contact Us</a>
+      <a href="packages.html" class="tm-btn">View All Packages</a>
     </div>
   </section>
 
@@ -873,17 +1227,17 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
           <h4>African Royalty Safaris</h4>
-          <p>Creating unforgettable African experiences with personalized service and attention to detail.</p>
+          <p>Creating unforgettable African adventures with expert guidance, safety, and exceptional service.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
           <h4>Quick Links</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
@@ -893,7 +1247,16 @@
             <li><a href="Destination.html">Destinations</a></li>
           </ul>
         </div>
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h4>Popular Packages</h4>
+          <ul class="footer-links">
+            <li><a href="packages.html">Beach Escape (5 Days)</a></li>
+            <li><a href="packages.html">Cultural Explorer (7 Days)</a></li>
+            <li><a href="packages.html">Kilimanjaro & Zanzibar Combo</a></li>
+            <li><a href="packages.html">Luxury Retreat (8 Days)</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
           <h4>Contact Info</h4>
           <ul class="footer-links">
             <li><i class="fas fa-phone-alt"></i> +255 699 179 046</li>
@@ -901,62 +1264,62 @@
             <li><i class="fas fa-map-marker-alt"></i> Tanzania, East Africa</li>
           </ul>
         </div>
-        <div class="col-lg-3 col-md-6">
-          <h4>Newsletter</h4>
-          <p>Subscribe to receive updates on special offers and new destinations.</p>
-          <form>
-            <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
-              <div class="input-group-append">
-                <button class="tm-btn" type="button">Subscribe</button>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
       <div class="copyright">
-        &copy; 2025 African Royalty Safaris. All Rights Reserved.
+        &copy; 2023 African Royalty Safaris. All Rights Reserved.
       </div>
     </div>
   </footer>
 
   <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+
   <script>
-    // Navbar scroll effect
-    $(window).scroll(function () {
-      if ($(window).scrollTop() > 50) {
-        $('.navbar').addClass('scrolled');
-      } else {
-        $('.navbar').removeClass('scrolled');
-      }
-    });
+    $(document).ready(function () {
+      // Navbar scroll effect
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 50) {
+          $('.navbar').addClass('scrolled');
+        } else {
+          $('.navbar').removeClass('scrolled');
+        }
+      });
 
-    // Close mobile menu when clicking on a link
-    $('.navbar-nav>li>a').on('click', function () {
-      $('.navbar-collapse').collapse('hide');
-    });
+      // Fade in animation on scroll
+      function checkFade() {
+        $('.fade-in').each(function () {
+          var bottom_of_object = $(this).offset().top + $(this).outerHeight() / 3;
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-    // Fade in animation on scroll
-    document.addEventListener('DOMContentLoaded', function () {
-      const fadeElements = document.querySelectorAll('.fade-in');
-
-      const fadeInOnScroll = function () {
-        fadeElements.forEach(function (element) {
-          const elementTop = element.getBoundingClientRect().top;
-          const elementVisible = 150;
-
-          if (elementTop < window.innerHeight - elementVisible) {
-            element.classList.add('visible');
+          if (bottom_of_window > bottom_of_object) {
+            $(this).addClass('visible');
           }
         });
-      };
+      }
 
-      // Check on load
-      fadeInOnScroll();
+      // Check fade on load and scroll
+      checkFade();
+      $(window).scroll(function () {
+        checkFade();
+      });
 
-      // Check on scroll
-      window.addEventListener('scroll', fadeInOnScroll);
+      // Smooth scrolling for anchor links
+      $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
+        if (
+          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+          location.hostname == this.hostname
+        ) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            event.preventDefault();
+            $('html, body').animate({
+              scrollTop: target.offset().top - 70
+            }, 1000);
+          }
+        }
+      });
     });
   </script>
 </body>
