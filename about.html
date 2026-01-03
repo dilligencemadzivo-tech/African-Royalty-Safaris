@@ -2,908 +2,1308 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | African Royalty Safaris</title>
-
-  <link rel="icon" type="image/png" href="img/logo.png" />
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="css/tooplate-style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary-color: #3c8d0d;
-      --primary-dark: #2e6f0a;
-      --accent-color: #d4af37;
-      --text-dark: #1a1a1a;
-      --text-light: #666;
-      --bg-light: #f9f9f9;
-      --white: #ffffff;
-      --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
-      --transition: all 0.3s ease;
-      --border-radius: 12px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-light);
-      margin: 0;
-      padding: 0;
-      color: var(--text-dark);
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      color: var(--text-dark);
-    }
-
-    /* Modern Top Bar */
-    .tm-top-contact {
-      background-color: var(--primary-color);
-      color: var(--white);
-      text-align: center;
-      padding: 12px 0;
-      font-size: 16px;
-      font-weight: 500;
-      animation: fadeIn 1.5s ease-in-out;
-      position: relative;
-      z-index: 1001;
-    }
-
-    .tm-top-contact a {
-      color: var(--white);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .tm-top-contact a:hover {
-      color: var(--accent-color);
-    }
-
-    .tm-top-contact .contact-icons {
-      display: inline-flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .tm-top-contact .contact-icons i {
-      margin-right: 5px;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Modernized Navbar */
-    .navbar {
-      padding: 1rem 0;
-      transition: var(--transition);
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-      background-color: var(--white) !important;
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .navbar.scrolled {
-      padding: 0.5rem 0;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .navbar-brand {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      color: var(--text-dark) !important;
-      display: flex;
-      align-items: center;
-      font-size: 1.5rem;
-    }
-
-    .navbar-brand img {
-      height: 50px;
-      margin-right: 10px;
-    }
-
-    .nav-link {
-      font-weight: 600;
-      margin: 0 5px;
-      position: relative;
-      transition: var(--transition);
-      color: var(--text-dark) !important;
-      padding: 10px 15px !important;
-      border-radius: 8px;
-    }
-
-    .nav-link:hover {
-      background-color: rgba(60, 141, 13, 0.1);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--accent-color);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 100%;
-    }
-
-    .nav-item.active .nav-link {
-      color: var(--primary-color) !important;
-    }
-
-    /* Mobile Navigation */
-    .navbar-toggler {
-      border: none;
-      padding: 5px 10px;
-      background: transparent;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .navbar-toggler:focus {
-      outline: none;
-      box-shadow: none;
-    }
-
-    .navbar-toggler-icon {
-      width: 25px;
-      height: 2px;
-      background-color: var(--text-dark);
-      display: block;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after {
-      content: '';
-      position: absolute;
-      width: 25px;
-      height: 2px;
-      background-color: var(--text-dark);
-      left: 0;
-      transition: all 0.3s ease;
-    }
-
-    .navbar-toggler-icon::before {
-      top: -8px;
-    }
-
-    .navbar-toggler-icon::after {
-      top: 8px;
-    }
-
-    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-      background-color: transparent;
-    }
-
-    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-      transform: rotate(45deg);
-      top: 0;
-    }
-
-    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-      transform: rotate(-45deg);
-      top: 0;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('img/about-hero.jpg') center/cover no-repeat;
-      color: var(--white);
-      padding: 180px 0 100px;
-      text-align: center;
-      margin-top: 0;
-      position: relative;
-    }
-
-    .hero-section h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      color: var(--white);
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-section p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      font-weight: 400;
-    }
-
-    /* About Section */
-    .about-section {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .section-title {
-      position: relative;
-      margin-bottom: 50px;
-      text-align: center;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      width: 80px;
-      height: 3px;
-      background-color: var(--accent-color);
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .about-section h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 25px;
-    }
-
-    .about-section p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: var(--text-light);
-      margin-bottom: 20px;
-    }
-
-    .tm-btn {
-      background-color: var(--primary-color);
-      color: var(--white);
-      padding: 12px 30px;
-      text-decoration: none;
-      border-radius: 30px;
-      display: inline-block;
-      margin-top: 15px;
-      font-weight: 600;
-      transition: var(--transition);
-      border: 2px solid var(--primary-color);
-      box-shadow: var(--shadow);
-    }
-
-    .tm-btn:hover {
-      background-color: transparent;
-      color: var(--primary-color);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-      text-decoration: none;
-    }
-
-    /* Mission & Vision Section */
-    .mission-vision-section {
-      background-color: var(--bg-light);
-      padding: 100px 0;
-    }
-
-    .card {
-      border: none;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .card-body {
-      padding: 40px 30px;
-    }
-
-    .card-icon {
-      font-size: 2.5rem;
-      color: var(--accent-color);
-      margin-bottom: 20px;
-      display: inline-block;
-      padding: 15px;
-      background: rgba(212, 175, 55, 0.1);
-      border-radius: 50%;
-    }
-
-    /* Services Section */
-    .services-section {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .highlight {
-      background: var(--bg-light);
-      padding: 40px 30px;
-      border-radius: var(--border-radius);
-      margin-top: 30px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      border-left: 4px solid var(--accent-color);
-      height: 100%;
-    }
-
-    .highlight:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .highlight h3 {
-      color: var(--primary-color);
-      margin-bottom: 20px;
-    }
-
-    .highlight ul {
-      margin-bottom: 0;
-    }
-
-    .highlight li {
-      padding: 8px 0;
-      font-weight: 500;
-    }
-
-    /* Why Choose Us Section */
-    .why-choose-section {
-      padding: 100px 0;
-      background-color: var(--bg-light);
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 40px;
-      padding: 20px;
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-    }
-
-    .feature-item:hover {
-      background-color: rgba(255, 255, 255, 0.8);
-      transform: translateY(-5px);
-    }
-
-    .feature-icon {
-      flex: 0 0 70px;
-      font-size: 2rem;
-      color: var(--accent-color);
-      margin-right: 20px;
-      background: rgba(212, 175, 55, 0.1);
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Promotion Section */
-    .promotion-section {
-      padding: 100px 0;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .promotion-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('img/pattern.png') repeat;
-      opacity: 0.1;
-    }
-
-    .promotion-section h2,
-    .promotion-section h4,
-    .promotion-section h5 {
-      color: var(--white);
-    }
-
-    .promo-card {
-      background-color: var(--white);
-      color: var(--text-dark);
-      border-radius: var(--border-radius);
-      padding: 40px;
-      box-shadow: var(--shadow-hover);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--primary-dark);
-      color: var(--white);
-      text-align: center;
-      padding: 50px 0 30px;
-    }
-
-    .social-icons {
-      margin-bottom: 30px;
-    }
-
-    .social-icons a {
-      color: var(--white);
-      font-size: 1.5rem;
-      margin: 0 15px;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .social-icons a:hover {
-      color: var(--accent-color);
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 1200px) {
-      .hero-section h1 {
-        font-size: 3rem;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .hero-section {
-        padding: 150px 0 80px;
-      }
-
-      .hero-section h1 {
-        font-size: 2.8rem;
-      }
-
-      .about-section,
-      .mission-vision-section,
-      .services-section,
-      .why-choose-section,
-      .promotion-section {
-        padding: 80px 0;
-      }
-
-      .navbar-brand {
-        font-size: 1.3rem;
-      }
-
-      .navbar-brand img {
-        height: 45px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero-section {
-        padding: 130px 0 60px;
-      }
-
-      .about-section h2 {
-        font-size: 2rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .feature-item {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .feature-icon {
-        margin-right: 0;
-        margin-bottom: 15px;
-      }
-
-      .promo-card .media {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .promo-card .media img {
-        margin-right: 0;
-        margin-bottom: 15px;
-      }
-
-      /* Fixed top bar for mobile */
-      .tm-top-contact {
-        padding: 10px 0;
-        font-size: 14px;
-      }
-
-      .tm-top-contact .contact-icons {
-        flex-direction: column;
-        gap: 5px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero-section {
-        padding: 120px 0 50px;
-      }
-
-      .hero-section h1 {
-        font-size: 2rem;
-      }
-
-      .hero-section p {
-        font-size: 1rem;
-      }
-
-      .navbar-brand {
-        font-size: 1.1rem;
-      }
-
-      .navbar-brand img {
-        height: 40px;
-      }
-
-      .tm-top-contact {
-        font-size: 13px;
-        padding: 8px 0;
-      }
-
-      .about-section h2 {
-        font-size: 1.8rem;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-      }
-
-      .highlight,
-      .card-body {
-        padding: 25px 20px;
-      }
-
-      .feature-item {
-        margin-bottom: 25px;
-        padding: 15px;
-      }
-
-      .promo-card {
-        padding: 25px 20px;
-      }
-
-      .social-icons a {
-        margin: 0 8px;
-        width: 45px;
-        height: 45px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .hero-section h1 {
-        font-size: 1.8rem;
-      }
-
-      .navbar-brand {
-        font-size: 1rem;
-      }
-
-      .navbar-brand img {
-        height: 35px;
-        margin-right: 5px;
-      }
-
-      .about-section p,
-      .card-body p,
-      .highlight p {
-        font-size: 16px;
-      }
-
-      .tm-top-contact {
-        font-size: 12px;
-      }
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - African Royalty Safaris</title>
+    <meta name="description"
+        content="Learn about African Royalty Safaris - our story, mission, team, and commitment to sustainable luxury safaris in Tanzania.">
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="apple-touch-icon" href="img/logo.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2a7d2e;
+            --primary-dark: #1e5a21;
+            --primary-light: #e8f5e9;
+            --secondary-color: #d4af37;
+            --secondary-dark: #b8941f;
+            --dark-color: #0d1f0a;
+            --dark-light: #1a3316;
+            --light-color: #f8f9fa;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e9ecef;
+            --text-color: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-title.center {
+            text-align: center;
+            display: block;
+        }
+
+        .section-title.center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        /* Modern Top Bar */
+        .top-bar {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 25px;
+        }
+
+        .contact-info i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        .social-icons-top {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons-top a {
+            color: var(--white);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .social-icons-top a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Modern Navigation */
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--white) !important;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            margin-right: 12px;
+            transition: var(--transition);
+        }
+
+        .navbar-nav .nav-item {
+            margin: 0 5px;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--text-color);
+            padding: 8px 15px !important;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+            background-color: var(--primary-light);
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            background: transparent;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--dark-color);
+            margin: 5px 0;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggler[aria-expanded="true"] span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(13, 31, 10, 0.85), rgba(13, 31, 10, 0.9)), url('img/about-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            overflow: hidden;
+            padding: 120px 0 60px;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .about-hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .about-hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-item a {
+            color: var(--secondary-color);
+        }
+
+        .breadcrumb-item.active {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* About Intro */
+        .about-intro {
+            position: relative;
+        }
+
+        .about-intro-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-intro-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-intro-text {
+            flex: 1;
+        }
+
+        .about-intro-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .about-intro-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .highlight-text {
+            background-color: var(--primary-light);
+            padding: 25px;
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--secondary-color);
+            margin: 30px 0;
+        }
+
+        .highlight-text p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--dark-color);
+            margin-bottom: 0;
+        }
+
+        /* Our Story Timeline */
+        .story-section {
+            background-color: var(--gray-light);
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* Mission & Values */
+        .mission-values {
+            position: relative;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .value-card:hover .value-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .value-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        /* Team Section */
+        .team-section {
+            background-color: var(--gray-light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .team-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .team-position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            background-color: var(--gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Sustainability */
+        .sustainability-section {
+            position: relative;
+        }
+
+        .sustainability-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sustainability-text {
+            flex: 1;
+        }
+
+        .sustainability-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .sustainability-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sustainability-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .sustainability-list i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .sustainability-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .sustainability-stat {
+            background-color: var(--primary-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .sustainability-stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .sustainability-stat .label {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .about-cta {
+            background: linear-gradient(rgba(13, 31, 10, 0.9), rgba(13, 31, 10, 0.95)), url('img/about-cta.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            border-radius: var(--border-radius);
+            padding: 80px 40px;
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+
+        .about-cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-cta-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 16px 40px;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding-top: 70px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .footer-logo img {
+            height: 45px;
+            margin-right: 12px;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            max-width: 350px;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            font-size: 0.9rem;
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+            margin-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .about-hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .about-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .about-intro-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .sustainability-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                align-items: flex-start;
+            }
+            
+            .timeline-year {
+                left: 30px;
+                transform: translateX(0);
+            }
+            
+            .timeline-content {
+                width: calc(100% - 100px);
+                margin-left: 80px;
+            }
+            
+            .about-cta {
+                padding: 60px 30px;
+            }
+            
+            .about-cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sustainability-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .navbar-brand img {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-padding {
+                padding: 50px 0;
+            }
+            
+            .about-cta {
+                padding: 50px 20px;
+            }
+            
+            .about-cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .navbar.scrolled {
+                padding: 10px 0;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 70px);
+                margin-left: 50px;
+                padding: 20px;
+            }
+            
+            .timeline-year {
+                padding: 5px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Top Contact Info -->
-  <div class="tm-top-contact">
-    <div class="contact-icons">
-      <a href="tel:+255699179046"><i class="fa fa-phone"></i> +255 699 179 046</a>
-      <a href="mailto:africanroyaltysafaris@gmail.com"><i class="fa fa-envelope"></i> africanroyaltysafaris@gmail.com</a>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <div><i class="fas fa-phone"></i> +255 699 179 046</div>
+                    <div><i class="fas fa-envelope"></i> africanroyaltysafaris@gmail.com</div>
+                </div>
+                <div class="social-icons-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo.png" alt="Logo" />
-        African Royalty Safaris
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="kilimanjaro.html">Kilimanjaro</a></li>
-          <li class="nav-item"><a class="nav-link" href="zanzibar.html">Zanzibar</a></li>
-          <li class="nav-item"><a class="nav-link" href="Destination.html">Destination</a></li>
-          <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <h1>About African Royalty Safaris</h1>
-      <p>Your gateway to extraordinary journeys across Tanzania's breathtaking landscapes and vibrant cultures</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <img src="img/african Royalty safaris logo.png" alt="Safari Image" class="img-fluid rounded shadow-lg" />
-        </div>
-        <div class="col-lg-6">
-          <h2>Welcome to African Royalty Safaris</h2>
-          <p>
-            We are a locally owned safari company built on passion, professionalism, and deep-rooted love for Africa's
-            natural beauty and culture.
-          </p>
-          <p>
-            From the legendary Serengeti plains and Ngorongoro Crater to the towering Mount Kilimanjaro and the
-            spice-scented beaches of Zanzibar,
-            we design custom safaris that match your dreams, be it luxury, adventure, or cultural immersion.
-          </p>
-          <p>
-            Our experienced guides, comfortable vehicles, and hand-picked accommodations ensure that your experience is
-            smooth, safe, and spectacular.
-          </p>
-          <a href="contact.html" class="tm-btn">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission & Vision Section -->
-  <section class="mission-vision-section">
-    <div class="container">
-      <h2 class="section-title">Our Journey: A Legacy of Excellence</h2>
-      <p class="text-center mb-5">Since our establishment, African Royalty Safaris has been driven by our commitment to
-        authentic, sustainable safari experiences. Our team brings decades of expertise in safari operations, ensuring
-        your journey is both remarkable and responsible.</p>
-
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <div class="card-icon">🌍</div>
-              <h3>Our Vision</h3>
-              <p>We aim to deliver transformative safari experiences while championing conservation and community
-                development. By putting sustainability at our core, we ensure future generations can experience
-                Tanzania's magnificent wildlife and landscapes.</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="African Royalty Safaris">
+                African Royalty Safaris
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kilimanjaro.html">Kilimanjaro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="zanzibar.html">Zanzibar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Destination.html">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-        <div class="col-lg-6 mb-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <div class="card-icon">🎯</div>
-              <h3>Our Mission</h3>
-              <p>We create bespoke safari adventures that showcase Tanzania's natural wonders authentically, support
-                wildlife conservation actively, empower local communities, and deliver personalized luxury experiences.
-              </p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+            <div class="about-hero-content">
+                <h1 class="about-hero-title">Our Story & Philosophy</h1>
+                <p class="about-hero-subtitle">Discover the passion, expertise, and commitment behind African Royalty Safaris – your trusted partner for unforgettable Tanzanian adventures.</p>
             </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services-section">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <div class="highlight">
-            <h3>Classic Wildlife Safaris</h3>
-            <ul class="list-unstyled">
-              <li class="mb-2">🏞️ Serengeti National Park</li>
-              <li class="mb-2">🌋 Ngorongoro Crater</li>
-              <li class="mb-2">🐘 Tarangire National Park</li>
-              <li class="mb-2">🦩 Lake Manyara</li>
-            </ul>
-          </div>
         </div>
-        <div class="col-lg-6 mb-4">
-          <div class="highlight">
-            <h3>Specialized Experiences</h3>
-            <ul class="list-unstyled">
-              <li class="mb-2">📸 Photography Safaris</li>
-              <li class="mb-2">👨‍👩‍👧‍👦 Private Family Adventures</li>
-              <li class="mb-2">🎭 Cultural Immersions</li>
-              <li class="mb-2">⛺ Luxury Mobile Camping</li>
-            </ul>
-          </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="about-intro section-padding">
+        <div class="container">
+            <div class="about-intro-content" data-aos="fade-up">
+                <div class="about-intro-image">
+                    <img src="img/about-intro.jpg" alt="African Royalty Safaris Team">
+                </div>
+                <div class="about-intro-text">
+                    <h2>Welcome to African Royalty Safaris</h2>
+                    <p>Founded with a deep love for Tanzania's breathtaking landscapes and rich wildlife, African Royalty Safaris has been creating exceptional safari experiences for over 15 years. What began as a passion project between local guides has grown into one of Tanzania's most respected luxury safari companies.</p>
+                    <p>Our name reflects our commitment to providing royal treatment to every guest who travels with us. We believe that exploring Africa's wonders should be an experience of comfort, wonder, and deep connection – not just a tour.</p>
+                    
+                    <div class="highlight-text">
+                        <p>"Our mission is to create transformative journeys that connect travelers with the heart of Africa while preserving its natural beauty for generations to come."</p>
+                    </div>
+                    
+                    <p>Based in Arusha, the safari capital of Tanzania, we have intimate knowledge of every national park, wildlife migration pattern, and cultural experience that makes Tanzania truly special. Our team combines decades of guiding experience with modern hospitality standards to deliver safaris that exceed expectations.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Why Choose Us Section -->
-  <section class="why-choose-section">
-    <div class="container">
-      <h2 class="section-title">Why Choose African Royalty Safaris</h2>
-
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="feature-item">
-            <div class="feature-icon">🏆</div>
-            <div>
-              <h4>Excellence in Service</h4>
-              <p>Every safari is tailored to your preferences, comfort requirements, and budget while maintaining our
-                high standards.</p>
+    <!-- Our Story Timeline -->
+    <section class="story-section section-padding">
+        <div class="container">
+            <h2 class="section-title center">Our Journey</h2>
+            <p class="section-subtitle">From humble beginnings to becoming a leader in luxury African safaris</p>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">
+                        <h3>Foundation</h3>
+                        <p>African Royalty Safaris was founded by three experienced Tanzanian guides with a shared vision of creating authentic, luxury safari experiences.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h3>Expansion</h3>
+                        <p>We expanded our services to include Kilimanjaro climbs and Zanzibar beach holidays, offering complete Tanzanian adventure packages.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>Sustainability Commitment</h3>
+                        <p>Launched our comprehensive sustainability program focusing on environmental conservation and community empowerment.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>Luxury Partnership</h3>
+                        <p>Partnered with top luxury lodges and camps across Tanzania to offer exclusive accommodations and experiences.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>5,000+ Travelers</h3>
+                        <p>Celebrated serving over 5,000 satisfied travelers from around the world, with a 98% satisfaction rate.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">⏰</div>
-            <div>
-              <h4>Flexible Scheduling</h4>
-              <p>We accommodate both individual travelers and groups with customizable departure dates.</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">🎯</div>
-            <div>
-              <h4>Prime Locations</h4>
-              <p>Access to Tanzania's most spectacular wildlife viewing locations and exclusive camping sites.</p>
-            </div>
-          </div>
         </div>
+    </section>
 
-        <div class="col-lg-6">
-          <div class="feature-item">
-            <div class="feature-icon">💎</div>
-            <div>
-              <h4>Value Promise</h4>
-              <p>Transparent pricing with no hidden costs, ensuring exceptional value for your investment.</p>
+    <!-- Mission & Values -->
+    <section class="mission-values section-padding">
+        <div class="container">
+            <h2 class="section-title center">Our Mission & Values</h2>
+            <p class="section-subtitle">The principles that guide every safari we create</p>
+            
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title">Passion for Africa</h3>
+                    <p>We're driven by a genuine love for Tanzania's wildlife, landscapes, and cultures. This passion translates into every detail of your journey.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="value-title">Excellence in Service</h3>
+                    <p>From our expert guides to our handpicked accommodations, we maintain the highest standards to ensure your comfort and satisfaction.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Authentic Experiences</h3>
+                    <p>We create journeys that go beyond tourism, offering genuine connections with local communities and authentic wildlife encounters.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Safety First</h3>
+                    <p>Your safety is our top priority. All our guides are certified, vehicles regularly maintained, and safety protocols strictly followed.</p>
+                </div>
             </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">🌍</div>
-            <div>
-              <h4>Conservation Focus</h4>
-              <p>Active support of wildlife protection and community development initiatives.</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">👥</div>
-            <div>
-              <h4>Expert Team</h4>
-              <p>Professional guides, skilled camp staff, and experienced naturalists dedicated to creating
-                extraordinary experiences.</p>
-            </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <div class="text-center mt-5">
-        <p class="lead">Our dedication to excellence, sustainability, and authentic experiences makes <strong>African
-            Royalty Safaris</strong> your ideal partner for exploring Tanzania's wonders. Let us transform your African
-          dream into reality.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Promotion Section -->
-  <section class="promotion-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-4 text-center text-lg-left mb-5 mb-lg-0">
-          <h2 class="text-uppercase">African Royalty Safaris</h2>
-          <h4 class="font-weight-semibold">Above the Best</h4>
-        </div>
-        <div class="col-lg-8">
-          <div class="promo-card">
-            <div class="media align-items-center">
-              <img src="img/logo.png" alt="Logo" class="mr-4" style="height: 80px;" />
-              <div class="media-body">
-                <p>
-                  From the endless plains of the Serengeti to Mount Kilimanjaro and the turquoise beaches of Zanzibar,
-                  we offer tailor-made safaris
-                  that immerse you in the heart of Africa's beauty, culture, and wildlife.
-                </p>
-              </div>
+    <!-- Team Section -->
+    <section class="team-section section-padding">
+        <div class="container">
+            <h2 class="section-title center">Meet Our Leadership Team</h2>
+            <p class="section-subtitle">The passionate experts behind your African adventure</p>
+            
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/team-1.jpg" alt="Juma Mwamba" class="team-img">
+                    <div class="team-content">
+                        <h3 class="team-name">Juma Mwamba</h3>
+                        <p class="team-position">Founder & Head Guide</p>
+                        <p class="team-bio">With 20+ years of guiding experience, Juma knows Tanzania's parks like the back of his hand. His passion for wildlife conservation is contagious.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/team-2.jpg" alt="Sarah Kimambo" class="team-img">
+                    <div class="team-content">
+                        <h3 class="team-name">Sarah Kimambo</h3>
+                        <p class="team-position">Operations Director</p>
+                        <p class="team-bio">Sarah ensures every safari runs smoothly. With a background in hospitality management, she oversees all logistics and guest experiences.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/team-3.jpg" alt="David Omondi" class="team-img">
+                    <div class="team-content">
+                        <h3 class="team-name">David Omondi</h3>
+                        <p class="team-position">Head of Kilimanjaro Expeditions</p>
+                        <p class="team-bio">A certified mountain guide with 50+ successful summits, David leads our Kilimanjaro climbs with expertise and enthusiasm.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="img/team-4.jpg" alt="Grace Mbogo" class="team-img">
+                    <div class="team-content">
+                        <h3 class="team-name">Grace Mbogo</h3>
+                        <p class="team-position">Sustainability Coordinator</p>
+                        <p class="team-bio">Grace leads our community and conservation initiatives, ensuring our operations benefit both travelers and Tanzania's ecosystems.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="social-icons">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-youtube"></i></a>
-      </div>
-      <p>&copy; 2025 African Royalty Safaris. All Rights Reserved.</p>
-    </div>
-  </footer>
+    <!-- Sustainability -->
+    <section class="sustainability-section section-padding">
+        <div class="container">
+            <div class="sustainability-content" data-aos="fade-up">
+                <div class="sustainability-text">
+                    <h2>Our Commitment to Sustainability</h2>
+                    <p>We believe that tourism should preserve and protect the very wonders that travelers come to experience. Our sustainability initiatives focus on three key areas:</p>
+                    <ul class="sustainability-list">
+                        <li><i class="fas fa-leaf"></i> <strong>Environmental Conservation:</strong> We follow strict eco-friendly practices, minimize single-use plastics, and contribute to wildlife conservation projects.</li>
+                        <li><i class="fas fa-users"></i> <strong>Community Empowerment:</strong> We employ local guides, support community-run lodges, and invest in education and healthcare projects in rural areas.</li>
+                        <li><i class="fas fa-hands-helping"></i> <strong>Cultural Preservation:</strong> We promote authentic cultural exchanges that respect traditions while providing economic benefits to local communities.</li>
+                    </ul>
+                </div>
+                <div class="sustainability-stats">
+                    <div class="sustainability-stat">
+                        <span class="number">100+</span>
+                        <span class="label">Local Community Members Employed</span>
+                    </div>
+                    <div class="sustainability-stat">
+                        <span class="number">15</span>
+                        <span class="label">Conservation Projects Supported</span>
+                    </div>
+                    <div class="sustainability-stat">
+                        <span class="number">85%</span>
+                        <span class="label">Locally Sourced Supplies</span>
+                    </div>
+                    <div class="sustainability-stat">
+                        <span class="number">$50K+</span>
+                        <span class="label">Community Investment Annually</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="js/jquery-1.11.3.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+    <!-- CTA Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-cta" data-aos="fade-up">
+                <h2 class="about-cta-title">Ready to Experience Africa with Us?</h2>
+                <p class="about-cta-text">Join the thousands of travelers who have trusted African Royalty Safaris to create their dream African adventure. Let us show you why our passion, expertise, and commitment make all the difference.</p>
+                <a href="contact.html" class="btn-cta">
+                    <i class="fas fa-calendar-alt"></i> Start Planning Your Safari
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // Navbar scroll effect
-    $(window).scroll(function () {
-      if ($(window).scrollTop() > 50) {
-        $('.navbar').addClass('scrolled');
-      } else {
-        $('.navbar').removeClass('scrolled');
-      }
-    });
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="African Royalty Safaris">
+                        African Royalty Safaris
+                    </div>
+                    <p class="footer-text">Your gateway to unforgettable African adventures. Luxury safaris, Kilimanjaro climbs, and Zanzibar escapes with expert guides and sustainable practices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="packages.html"><i class="fas fa-chevron-right"></i> Packages</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="Destination.html"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Destinations</h4>
+                    <ul class="footer-links">
+                        <li><a href="kilimanjaro.html"><i class="fas fa-mountain"></i> Mount Kilimanjaro</a></li>
+                        <li><a href="zanzibar.html"><i class="fas fa-umbrella-beach"></i> Zanzibar Island</a></li>
+                        <li><a href="Destination.html"><i class="fas fa-paw"></i> Safari Destinations</a></li>
+                        <li><a href="packages.html"><i class="fas fa-suitcase-rolling"></i> All Packages</a></li>
+                        <li><a href="#"><i class="fas fa-camera"></i> Photo Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+255699179046"><i class="fas fa-phone"></i> +255 699 179 046</a></li>
+                        <li><a href="mailto:africanroyaltysafaris@gmail.com"><i class="fas fa-envelope"></i> africanroyaltysafaris@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Arusha, Tanzania</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> GMT +3</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© <span id="currentYear">2025</span> African Royalty Safaris. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #d4af37;"></i> for unforgettable African adventures</p>
+            </div>
+        </div>
+    </footer>
 
-    // Close mobile menu when clicking on a link
-    $('.navbar-nav>li>a').on('click', function () {
-      $('.navbar-collapse').collapse('hide');
-    });
-  </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Team card animation on hover
+        document.querySelectorAll('.team-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const img = this.querySelector('.team-img');
+                img.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const img = this.querySelector('.team-img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 
 </html>
